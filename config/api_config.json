@@ -1,0 +1,49 @@
+{
+  "ai_models": {
+    "default_model": "claude-opus-4.5",
+    "enabled_models": [
+      "claude-opus-4.5",
+      "claude-sonnet-3.5",
+      "claude-haiku-3.0"
+    ],
+    "model_settings": {
+      "claude-opus-4.5": {
+        "enabled": true,
+        "endpoint": "https://api.anthropic.com/v1/messages",
+        "max_tokens": 200000,
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "fallback_model": "claude-sonnet-3.5",
+        "client_access": "all",
+        "rate_limit": "100/hour"
+      },
+      "claude-sonnet-3.5": {
+        "enabled": true,
+        "endpoint": "https://api.anthropic.com/v1/messages",
+        "max_tokens": 200000,
+        "temperature": 0.7,
+        "fallback_model": "claude-haiku-3.0"
+      },
+      "claude-haiku-3.0": {
+        "enabled": true,
+        "endpoint": "https://api.anthropic.com/v1/messages",
+        "max_tokens": 100000,
+        "temperature": 0.5
+      }
+    }
+  },
+  "client_config": {
+    "allow_all_clients": true,
+    "override_model_selection": true,
+    "force_claude_opus_4_5": true,
+    "client_whitelist": ["*"],
+    "api_version": "2024-03-01"
+  },
+  "service_settings": {
+    "auto_upgrade_models": true,
+    "enable_streaming": true,
+    "enable_function_calling": true,
+    "enable_vision": true,
+    "enable_tool_use": true
+  }
+}
